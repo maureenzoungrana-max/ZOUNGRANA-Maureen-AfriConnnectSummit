@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,216 @@
     <!-- feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <!-- section Hero interne -->
+    <section>
+        <div class="hero-content">
+
+            <!-- Fil d'Ariane -->
+            <div class="top">
+                <a href="index.html">Accueil</a>
+                <span>></span>
+                <span>Inscription & contact</span>
+            </div>
+
+            <!-- Titre -->
+            <h1>Inscription & contact</h1>
+
+        </div>
+    </section>
+
+    <!-- formulaire d'inscription -->
+    <section>
+        <!-- Formulaire -->
+        <div class="formulaire">
+
+            <h2>Inscription</h2>
+
+            <form>
+
+                <div class="champ">
+                    <label>Nom complet</label>
+                    <input type="text" placeholder="Votre nom complet" required>
+                </div>
+
+                <div class="champ">
+                    <label>Email</label>
+                    <input type="email" placeholder="exemple@email.com" required>
+                </div>
+
+                <div class="champ">
+                    <label>Téléphone</label>
+                    <input type="tel" placeholder="+221 XX XXX XX XX" required>
+                </div>
+
+                <div class="champ">
+                    <label>Type de participation</label>
+                    <select required>
+                        <option value="">-- Choisir --</option>
+                        <option>Participant</option>
+                        <option>Intervenant</option>
+                        <option>Partenaire</option>
+                        <option>Sponsor</option>
+                        <option>Presse</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label>Pays africain</label>
+                    <select required>
+                        <option value="">-- Sélectionnez un pays --</option>
+                        <option>Sénégal</option>
+                        <option>Burkina Faso</option>
+                        <option>Côte d'Ivoire</option>
+                        <option>Mali</option>
+                        <option>Niger</option>
+                        <option>Ghana</option>
+                        <option>Nigeria</option>
+                        <option>Cameroun</option>
+                        <option>Togo</option>
+                        <option>Bénin</option>
+                        <option>Guinée</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label>Message / Motivation</label>
+                    <textarea rows="6" placeholder="Présentez votre motivation..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Envoyer</button>
+
+            </form>
+
+        </div>
+        <!-- Informations -->
+        <div class="infos">
+
+            <h2><i class="bi bi-info-circle-fill"></i> Informations</h2>
+
+            <p><i class="bi bi-geo-alt-fill"></i> <strong>Lieu :</strong> Centre International de Conférences, Dakar</p>
+
+            <p><i class="bi bi-calendar-event-fill"></i> <strong>Date :</strong> 15 au 17 octobre 2026</p>
+
+            <p><i class="bi bi-clock-fill"></i> <strong>Horaires :</strong> 09h00 - 18h00</p>
+
+            <p><i class="bi bi-envelope-fill"></i> <strong>Email :</strong> contact@africonnect.com</p>
+
+            <p><i class="bi bi-telephone-fill"></i> <strong>Téléphone :</strong> +221 77 123 45 67</p>
+
+            <p>
+                <i class="bi bi-lightbulb-fill"></i>
+                Rejoignez AfriConnect pour échanger avec des experts,
+                entrepreneurs et chercheurs autour des innovations technologiques en Afrique.
+            </p>
+
+        </div>
+
+
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2>Foire Aux Questions</h2>
+
+        <div class="accordion">
+
+            <div class="item">
+                <input type="radio" name="faq" id="q1">
+                <label for="q1">Qui peut participer à la conférence ?</label>
+                <div class="content">
+                    <p>La conférence est ouverte aux étudiants, professionnels, entrepreneurs, chercheurs et passionnés
+                        de technologie.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <input type="radio" name="faq" id="q2">
+                <label for="q2">L'inscription est-elle gratuite ?</label>
+                <div class="content">
+                    <p>Une inscription est obligatoire. Selon votre catégorie, la participation peut être gratuite ou
+                        payante.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <input type="radio" name="faq" id="q3">
+                <label for="q3">Comment devenir intervenant ?</label>
+                <div class="content">
+                    <p>Vous pouvez soumettre votre candidature via le formulaire d'inscription en choisissant «
+                        Intervenant ».</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <input type="radio" name="faq" id="q4">
+                <label for="q4">Un certificat de participation est-il délivré ?</label>
+                <div class="content">
+                    <p>Oui, chaque participant recevra un certificat numérique à la fin de la conférence.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <input type="radio" name="faq" id="q5">
+                <label for="q5">Comment contacter l'organisation ?</label>
+                <div class="content">
+                    <p>Vous pouvez nous écrire à contact@africonnect.com ou utiliser le formulaire de contact du site.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Carte google maps -->
+    <section>
+        <iframe src="https://www.google.com/maps?q=MGHW%2B75R%20Dakar&output=embed" frameborder="0"></iframe>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <ul>
+                    <li class="logo">AfriConnect</li>
+                    <li class="logo" id="color">Summit</li>
+                </ul>
+                <p>La conférence dédiée aux innovations technologiques en Afrique.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Suivez-nous</h3>
+
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="copyrigth"></div>
+    </footer>
+
     <!-- script javascript-->
     <script src="js/main.js"></script>
 </body>
+
 </html>
