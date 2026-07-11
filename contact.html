@@ -13,9 +13,31 @@
 </head>
 
 <body>
+     <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <ul>
+                <li><img src="images/logo.png" alt="logo"></li>
+                <li>AfriConnect</li>
+                <li id="color">Summit</li>
+            </ul>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html" class="active">Inscription & Contact</a></li>
+        </ul>
+        <a href="contact.html" class="primaire">Réserver ma place</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <!-- section Hero interne -->
-    <section>
+    <section class="hero-interne">
         <div class="hero-content">
 
             <!-- Fil d'Ariane -->
@@ -32,11 +54,11 @@
     </section>
 
     <!-- formulaire d'inscription -->
-    <section>
+    <section class="contact">
         <!-- Formulaire -->
         <div class="formulaire">
 
-            <h2>Inscription</h2>
+            <div class="title">Inscription</div>
 
             <form>
 
@@ -98,7 +120,7 @@
         <!-- Informations -->
         <div class="infos">
 
-            <h2><i class="bi bi-info-circle-fill"></i> Informations</h2>
+            <div class="title"><i class="bi bi-info-circle-fill"></i> Informations</div>
 
             <p><i class="bi bi-geo-alt-fill"></i> <strong>Lieu :</strong> Centre International de Conférences, Dakar</p>
 
@@ -123,7 +145,7 @@
 
     <!-- FAQ -->
     <section>
-        <h2>Foire Aux Questions</h2>
+        <div class="title">Foire Aux Questions</div>
 
         <div class="accordion">
 
@@ -176,7 +198,8 @@
     </section>
 
     <!-- Carte google maps -->
-    <section>
+    <section class="localisation">
+        <div class="title">Localisation</div>
         <iframe src="https://www.google.com/maps?q=MGHW%2B75R%20Dakar&output=embed" frameborder="0"></iframe>
     </section>
 
@@ -185,9 +208,10 @@
         <div class="footer-container">
 
             <div class="footer-col">
-                <ul>
-                    <li class="logo">AfriConnect</li>
-                    <li class="logo" id="color">Summit</li>
+                <ul class="logo">
+                    <li><img src="images/logo.png" alt="logo"></li>
+                    <li>AfriConnect</li>
+                    <li id="color">Summit</li>
                 </ul>
                 <p>La conférence dédiée aux innovations technologiques en Afrique.</p>
             </div>

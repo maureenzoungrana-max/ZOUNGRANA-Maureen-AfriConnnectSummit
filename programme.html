@@ -11,9 +11,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <ul>
+                <li><img src="images/logo.png" alt="logo"></li>
+                <li>AfriConnect</li>
+                <li id="color">Summit</li>
+            </ul>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html" class="active">Programme</a></li>
+            <li><a href="intervenants.html">Intervenants</a></li>
+            <li><a href="contact.html">Inscription & Contact</a></li>
+        </ul>
+        <a href="contact.html" class="primaire">Réserver ma place</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
     
     <!-- hero interne -->
-    <section>
+    <section class="hero-interne">
         <div class="hero-content">
 
             <!-- Fil d'Ariane -->
@@ -30,7 +52,7 @@
     </section>
 
     <!-- section onglets 3 jours -->
-    <section>
+    <section class="programme"> 
         <div class="tabs">
             <button class="tab">Jour 1</button>
             <button class="tab">Jour 2</button>
@@ -177,8 +199,9 @@
     </section>
 
     <!-- section thématique -->
-    <section>
-        <div class="themes-grid">
+    <section class="theme">
+        <div class="title">Thème</div>
+        <div class="theme-grid">
 
         <div class="theme-card">
             <i class="bi bi-cpu"></i>
@@ -212,9 +235,10 @@
         <div class="footer-container">
 
             <div class="footer-col">
-                <ul>
-                    <li class="logo">AfriConnect</li>
-                    <li class="logo" id="color">Summit</li>
+                <ul class="logo">
+                    <li><img src="images/logo.png" alt="logo"></li>
+                    <li>AfriConnect</li>
+                    <li id="color">Summit</li>
                 </ul>
                 <p>La conférence dédiée aux innovations technologiques en Afrique.</p>
             </div>

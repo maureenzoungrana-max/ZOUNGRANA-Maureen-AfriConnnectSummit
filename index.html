@@ -16,15 +16,19 @@
     <!-- navbar -->
     <nav class="navbar">
         <div class="logo">
-            <li class="logo">AfriConnect</li>
-            <li class="logo" id="color">Summit</li>
+            <ul>
+                <li><img src="images/logo.png" alt="logo"></li>
+                <li>AfriConnect</li>
+                <li id="color">Summit</li>
+            </ul>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="programme.html">Programme</a></li>
             <li><a href="intervenants.html">Intervenants</a></li>
             <li><a href="contact.html">Inscription & Contact</a></li>
         </ul>
+        <a href="contact.html" class="primaire">Réserver ma place</a>
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -33,40 +37,41 @@
     </nav>
 
     <!-- section hero -->
-    <section>
+    <section class="hero-section">
         <div class="hero-container">
             <div class="hero-text">
                 <h1>Le futur tech de l'Afrique <em>se construit ici.</em></h1>
                 <p>Trois jours de conférences, d'ateliers pratiques, de networking et d'innovations réunissant
                     développeurs, entrepreneurs, investisseurs et étudiants venus de toute l'Afrique.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="primaire">Réserver ma place</a>
-                    <a href="#" class="secondaire">Découvrir le programme</a>
+                    <a href="contact.html" class="primaire">Réserver ma place</a>
+                    <a href="programme.html" class="secondaire">Découvrir le programme</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="image"></div>
+                <div class="image">
+                    <img src="images/arriere (1).jpeg" alt="acceuil">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- section chiffres clés -->
-    <section>
-        <div></div>
+    <section class="chiffres-cle">
         <ul>
-            <li>
+            <li class="counters">
                 <h3></h3>
                 <p>Participants</p>
             </li>
-            <li>
+            <li class="counters">
                 <h3></h3>
                 <p>Intervenants</p>
             </li>
-            <li>
+            <li class="counters">
                 <h3></h3>
                 <p>Jours</p>
             </li>
-            <li>
+            <li class="counters">
                 <h3></h3>
                 <p>Pays</p>
             </li>
@@ -74,30 +79,34 @@
     </section>
 
     <!-- section pourquoi anticiper -->
-    <section>
-        <div class="card">
-            <i class="fa-solid fa-users"></i>
-            <h3>Networking</h3>
-            <p>Échangez avec des développeurs, entrepreneurs et investisseurs de toute l'Afrique.</p>
-        </div>
-        <div class="card">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h3>Innovation</h3>
-            <p>Découvrez les dernières innovations technologiques et les startups africaines.</p>
-        </div>
-        <div class="card">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h3>Formation</h3>
-            <p>Participez à des ateliers et conférences animés par des experts du secteur.</p>
+    <section class="why">
+        <div class="title">Pourquoi participer?</div>
+        <div class="grid">
+            <div class="card">
+                <i class="bi bi-people-fill"></i> 
+                <h3>Networking</h3>
+                <p>Échangez avec des développeurs, entrepreneurs et investisseurs de toute l'Afrique.</p>
+            </div>
+            <div class="card">
+                <i class="bi bi-lightbulb-fill"></i>
+                <h3>Innovation</h3>
+                <p>Découvrez les dernières innovations technologiques et les startups africaines.</p>
+            </div>
+            <div class="card">
+                <i class="bi bi-mortarboard-fill"></i>
+                <h3>Formation</h3>
+                <p>Participez à des ateliers et conférences animés par des experts du secteur.</p>
+            </div>
         </div>
     </section>
 
     <!-- section intervenants vedettes -->
     <section>
+        <div class="title">Intervenants vedettes</div>
         <div class="grid">
             <div class="card">
                 <img src="" alt="Intervenant 1">
-                <h3>Amina Diallo</h3>
+                <h3>Binta Diallo</h3>
                 <p>Ingénieure IA</p>
                 <span>Sénégal 🇸🇳</span>
             </div>
@@ -124,21 +133,25 @@
 
     <!-- section sponsors -->
     <section>
+        <div class="title">Sponsors</div>
         <div class="sponsor-container">
-
+            
             <div class="sponsor gold">
+                <i class="bi bi-award-fill"></i>
                 <h3>Partenaire Or</h3>
                 <h4>AfricaTech Group</h4>
                 <p>Partenaire principal du AfriConnect Summit.</p>
             </div>
 
             <div class="sponsor silver">
+                <i class="bi bi-gem"></i>
                 <h3>Partenaire Argent</h3>
                 <h4>Digital Bank</h4>
                 <p>Soutien des conférences et des ateliers.</p>
             </div>
 
             <div class="sponsor bronze">
+                <i class="bi bi-trophy-fill"></i>
                 <h3>Partenaire Bronze</h3>
                 <h4>Startup Hub</h4>
                 <p>Partenaire de l'espace innovation.</p>
@@ -154,9 +167,10 @@
         <div class="footer-container">
 
             <div class="footer-col">
-                <ul>
-                    <li class="logo">AfriConnect</li>
-                    <li class="logo" id="color">Summit</li>
+                <ul class="logo">
+                    <li><img src="images/logo.png" alt="logo"></li>
+                    <li>AfriConnect</li>
+                    <li id="color">Summit</li>
                 </ul>
                 <p>La conférence dédiée aux innovations technologiques en Afrique.</p>
             </div>
