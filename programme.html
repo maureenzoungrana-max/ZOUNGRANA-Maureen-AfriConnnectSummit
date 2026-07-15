@@ -36,7 +36,7 @@
     </nav>
     
     <!-- hero interne -->
-    <section class="hero-interne">
+    <section class="hero-interne reveal zoom-in">
         <div class="hero-content">
 
             <!-- Fil d'Ariane -->
@@ -54,14 +54,14 @@
 
     <!-- section onglets 3 jours -->
     <section class="programme"> 
-        <div class="tabs">
-            <button class="tab">Jour 1</button>
-            <button class="tab">Jour 2</button>
-            <button class="tab">Jour 3</button>
+        <div class="tabs reveal slide-in">
+            <button class="tab active" data-day="jour1">Jour 1</button>
+            <button class="tab" data-day="jour2">Jour 2</button>
+            <button class="tab" data-day="jour3">Jour 3</button>
         </div>
 
         <!-- JOUR 1 -->
-        <div class="planning active">
+        <div class="planning active" id="jour1">
             <table>
                 <thead>
                     <tr>
@@ -107,7 +107,7 @@
         </div>
 
         <!-- JOUR 2 -->
-        <div class="planning">
+        <div class="planning" id="jour2">
             <table>
                 <thead>
                     <tr>
@@ -153,7 +153,7 @@
         </div>
 
         <!-- JOUR 3 -->
-        <div class="planning">
+        <div class="planning" id="jour3">
             <table>
                 <thead>
                     <tr>
@@ -200,7 +200,7 @@
     </section>
 
     <!-- section thématique -->
-    <section class="theme">
+    <section class="theme reveal fade-in">
         <div class="title">Thème</div>
         <div class="theme-grid">
 
@@ -232,7 +232,7 @@
     </section>
 
     <!-- footer -->
-    <footer>
+    <footer class="reveal slide-in">
         <div class="footer-container">
 
             <div class="footer-col">
@@ -271,7 +271,7 @@
     </footer>
 
     <div id="copyrigth"></div>
-    
+
     <!-- script javascript-->
     <script src="js/main.js"></script>
 </body>
