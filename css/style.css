@@ -75,8 +75,6 @@ html {
     button{
         margin-top: 10px;
         padding: 4px;
-        width: 45px;
-        height: 6vh;
         margin-left: 25px;
         border-radius: 10px;
         background: var(--third-color);
@@ -1105,4 +1103,60 @@ input:checked+label::after {
 .reveal.show {
     opacity: 1;
     transform: translate(0) scale(1);
+}
+
+/* error du formulaire */
+.error{
+    color: red;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.error-input{
+    border: solid red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.success{
+    border: 2px solid green;
+}
+
+.success-message{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*  */
+#back-to-top {
+    color: white;
+    border-radius: 30px;
+    background: var(--primary-color);
+    height: fit-content;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    text-decoration: none;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(12px) scale(0.88);
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1);
+    pointer-events: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+
+    i {
+        font-size: 30px;
+    }
+
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }

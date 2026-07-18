@@ -187,3 +187,161 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll(".count").forEach(counter => {
     counterObserver.observe(counter);
 });
+
+// validation du formulaire 
+const form = document.getElementById("contact-form");
+
+const nom = document.getElementById("nom");
+const email = document.getElementById("email");
+const telephone = document.getElementById("telephone");
+const participation = document.getElementById("participation");
+const pays = document.getElementById("pays");
+const message = document.getElementById("message");
+
+const successMessage = document.getElementById("success-message");
+if(form){
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    let valide = true;
+
+    // Effacer les anciens messages
+    document.querySelectorAll(".error").forEach(error => {
+        error.textContent = "";
+    });
+
+    // Réinitialiser les classes
+    document
+        .querySelectorAll("input, select, textarea")
+        .forEach(element => {
+            element.classList.remove("success", "error-input");
+        });
+
+    successMessage.textContent = "";
+    successMessage.classList.remove("success-message");
+
+    // verification du nom
+    if (nom.value.trim() === "") {
+
+        document.getElementById("nom-error").textContent =
+            "Le nom est obligatoire.";
+
+        nom.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        nom.classList.add("success");
+    }
+
+    // verification de l'email
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexEmail.test(email.value.trim())) {
+
+        document.getElementById("email-error").textContent =
+            "Veuillez saisir un email valide.";
+
+        email.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        email.classList.add("success");
+    }
+
+    // verification du numéro de téléphone
+    if (telephone.value.trim().length < 8) {
+
+        document.getElementById("telephone-error").textContent =
+            "Le téléphone doit contenir au moins 8 chiffres.";
+
+        telephone.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        telephone.classList.add("success");
+    }
+
+    // verification de la participation
+    if (participation.value === "") {
+
+        document.getElementById("participation-error").textContent =
+            "Veuillez choisir un type de participation.";
+
+        participation.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        participation.classList.add("success");
+    }
+
+    // verification du pays
+    if (pays.value === "") {
+
+        document.getElementById("pays-error").textContent =
+            "Veuillez sélectionner un pays.";
+
+        pays.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        pays.classList.add("success");
+    }
+
+    // verification du pays
+    if (message.value.trim().length < 20) {
+
+        document.getElementById("message-error").textContent =
+            "Le message doit contenir au moins 20 caractères.";
+
+        message.classList.add("error-input");
+        valide = false;
+
+    } else {
+
+        message.classList.add("success");
+    }
+
+    // validation du formulaire si tout est valide
+    if (valide) {
+
+        successMessage.textContent =
+            "Votre inscription a été envoyée avec succès !";
+
+        successMessage.classList.add("success-message");
+
+        form.reset();
+
+        document
+            .querySelectorAll("input, select, textarea")
+            .forEach(element => {
+                element.classList.remove("success");
+            });
+    }
+
+});
+}
+
+// bouton qui apparait au scroll
+window.addEventListener('scroll', function () {
+
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  const backToTopButton = document.getElementById('back-to-top');
+
+  if (scrollPosition > 300) { // Ajoute la classe .scrolled si on défile de plus de 300px, sinon la retire
+
+    backToTopButton.classList.add('visible');
+
+  } else {
+
+    backToTopButton.classList.remove('visible');
+
+  }
+
+});

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-     <!-- navbar -->
+    <!-- navbar -->
     <nav class="navbar">
         <div class="logo">
             <ul>
@@ -38,7 +38,7 @@
     </nav>
 
     <!-- section Hero interne -->
-    <section class="hero-interne reveal zoom-in">
+    <section class="hero-interne reveal zoom-in" id="top-contact">
         <div class="hero-content">
 
             <!-- Fil d'Ariane -->
@@ -61,26 +61,30 @@
 
             <div class="title">Inscription</div>
 
-            <form>
+            <form id="contact-form">
 
                 <div class="champ">
                     <label>Nom complet</label>
-                    <input type="text" placeholder="Votre nom complet" required>
+                    <input type="text" id="nom" placeholder="Votre nom complet">
+                    <span class="error" id="nom-error"></span>
                 </div>
 
                 <div class="champ">
                     <label>Email</label>
-                    <input type="email" placeholder="exemple@email.com" required>
+                    <input type="email" id="email" placeholder="exemple@email.com">
+                    <span class="error" id="email-error"></span>
                 </div>
 
                 <div class="champ">
                     <label>Téléphone</label>
-                    <input type="tel" placeholder="+221 XX XXX XX XX" required>
+                    <input type="tel" id="telephone" placeholder="+221 XX XXX XX XX">
+                    <span class="error" id="telephone-error"></span>
                 </div>
 
                 <div class="champ">
                     <label>Type de participation</label>
-                    <select required>
+
+                    <select id="participation">
                         <option value="">-- Choisir --</option>
                         <option>Participant</option>
                         <option>Intervenant</option>
@@ -88,11 +92,14 @@
                         <option>Sponsor</option>
                         <option>Presse</option>
                     </select>
+
+                    <span class="error" id="participation-error"></span>
                 </div>
 
                 <div class="champ">
                     <label>Pays africain</label>
-                    <select required>
+
+                    <select id="pays">
                         <option value="">-- Sélectionnez un pays --</option>
                         <option>Sénégal</option>
                         <option>Burkina Faso</option>
@@ -106,14 +113,21 @@
                         <option>Bénin</option>
                         <option>Guinée</option>
                     </select>
+
+                    <span class="error" id="pays-error"></span>
                 </div>
 
                 <div class="champ">
                     <label>Message / Motivation</label>
-                    <textarea rows="6" placeholder="Présentez votre motivation..."></textarea>
+
+                    <textarea id="message" rows="6" placeholder="Présentez votre motivation..."></textarea>
+
+                    <span class="error" id="message-error"></span>
                 </div>
 
                 <button type="submit" class="btn">Envoyer</button>
+
+                <div id="success-message"></div>
 
             </form>
 
@@ -129,9 +143,11 @@
 
             <p><i class="bi bi-clock-fill"></i> <strong>Horaires :</strong> 09h00 - 18h00</p>
 
-            <p><i class="bi bi-envelope-fill"></i> <strong>Email :</strong> <a href="mailto:maureenzoungrana@gmail.com">contact@africonnect.com</a></p>
+            <p><i class="bi bi-envelope-fill"></i> <strong>Email :</strong> <a
+                    href="mailto:maureenzoungrana@gmail.com">contact@africonnect.com</a></p>
 
-            <p><i class="bi bi-telephone-fill"></i> <strong>Téléphone :</strong> <a href="tel:+221710073201">+221 77 123 45 67</a></p>
+            <p><i class="bi bi-telephone-fill"></i> <strong>Téléphone :</strong> <a href="tel:+221710073201">+221 77 123
+                    45 67</a></p>
 
             <p>
                 <i class="bi bi-lightbulb-fill"></i>
@@ -241,9 +257,13 @@
 
         </div>
 
-       
+
     </footer>
- <div id="copyrigth"></div>
+    <div id="copyrigth"></div>
+
+    <!-- bouton back to top -->
+    <a href="#top-contact" id="back-to-top"><i class="bi bi-arrow-up"></i></a>
+
     <!-- script javascript-->
     <script src="js/main.js"></script>
 </body>
