@@ -4,7 +4,7 @@ const navLinks = document.querySelector(".nav-links");
 
 // Ouverture/Fermeture du menu
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 });
 
 // navbar dynamique
@@ -12,55 +12,55 @@ const navbar = document.querySelector(".navbar");
 
 // Changement de la navbar après 80 px
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 80) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
+    if (window.scrollY > 80) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
 });
 
 // dark-mode
 (function () {
 
-  const root = document.documentElement;
+    const root = document.documentElement;
 
-  function updateIcon(toggler, theme) {
-    toggler.innerHTML = theme === "dark"
-      ? '<i class="bi bi-sun-fill"></i>'
-      : '<i class="bi bi-moon-fill"></i>';
-  }
+    function updateIcon(toggler, theme) {
+        toggler.innerHTML = theme === "dark"
+            ? '<i class="bi bi-sun-fill"></i>'
+            : '<i class="bi bi-moon-fill"></i>';
+    }
 
-  function applyTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-    document.querySelectorAll("[data-theme-toggler]").forEach((toggler) => {
-      updateIcon(toggler, theme);
+    function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        document.querySelectorAll("[data-theme-toggler]").forEach((toggler) => {
+            updateIcon(toggler, theme);
+        });
+    }
+
+    function toggleDarkMode() {
+        const currentTheme = root.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+    }
+
+    // adaptation a la préférence du systeme
+    function init() {
+        const storedPreference = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
+        root.setAttribute("data-theme", theme);
+    }
+
+    init();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const togglers = document.querySelectorAll("[data-theme-toggler]");
+        togglers.forEach((toggler) => {
+            updateIcon(toggler, root.getAttribute("data-theme"));
+            toggler.addEventListener("click", toggleDarkMode);
+        });
     });
-  }
-
-  function toggleDarkMode() {
-    const currentTheme = root.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    applyTheme(newTheme);
-  }
-
-  // adaptation a la préférence du systeme
-  function init() {
-    const storedPreference = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = storedPreference || (systemPrefersDark ? "dark" : "light");
-    root.setAttribute("data-theme", theme);
-  }
-
-  init();
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const togglers = document.querySelectorAll("[data-theme-toggler]");
-    togglers.forEach((toggler) => {
-      updateIcon(toggler, root.getAttribute("data-theme"));
-      toggler.addEventListener("click", toggleDarkMode);
-    });
-  });
 
 })();
 
@@ -68,30 +68,29 @@ window.addEventListener("scroll", () => {
 const copyright = document.getElementById("copyrigth");
 
 copyright.innerHTML =
-  `&copy; ${new Date().getFullYear()} AfriConnect Summit - Tous droits réservés.`;
+    `&copy; ${new Date().getFullYear()} AfriConnect Summit - Tous droits réservés.`;
 
 // Animations fade-in, slide-in, zoom-in au scroll 
 const elements = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver((entries) => {
 
-  entries.forEach(entry => {
+    entries.forEach(entry => {
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
 
-  });
+    });
 
 }, {
-  threshold: 0.3
+    threshold: 0.3
 });
 
-
 elements.forEach(element => {
-  observer.observe(element);
+    observer.observe(element);
 });
 
 // onglets jour : programme
@@ -129,20 +128,18 @@ buttons.forEach(button => {
         // Ajouter active au bouton cliqué
         button.classList.add("active");
 
-
         const filter = button.dataset.filter;
-
 
         cards.forEach(card => {
 
             const category = card.dataset.category;
 
 
-            if(filter === "all" || category === filter){
+            if (filter === "all" || category === filter) {
 
                 card.style.display = "flex";
 
-            }else{
+            } else {
 
                 card.style.display = "none";
 
@@ -154,7 +151,7 @@ buttons.forEach(button => {
 
 });
 
-// 
+//Compteurs animés 
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -199,149 +196,223 @@ const pays = document.getElementById("pays");
 const message = document.getElementById("message");
 
 const successMessage = document.getElementById("success-message");
-if(form){
+if (form) {
 
-form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    let valide = true;
+        let valide = true;
 
-    // Effacer les anciens messages
-    document.querySelectorAll(".error").forEach(error => {
-        error.textContent = "";
-    });
-
-    // Réinitialiser les classes
-    document
-        .querySelectorAll("input, select, textarea")
-        .forEach(element => {
-            element.classList.remove("success", "error-input");
+        // Effacer les anciens messages
+        document.querySelectorAll(".error").forEach(error => {
+            error.textContent = "";
         });
 
-    successMessage.textContent = "";
-    successMessage.classList.remove("success-message");
-
-    // verification du nom
-    if (nom.value.trim() === "") {
-
-        document.getElementById("nom-error").textContent =
-            "Le nom est obligatoire.";
-
-        nom.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        nom.classList.add("success");
-    }
-
-    // verification de l'email
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!regexEmail.test(email.value.trim())) {
-
-        document.getElementById("email-error").textContent =
-            "Veuillez saisir un email valide.";
-
-        email.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        email.classList.add("success");
-    }
-
-    // verification du numéro de téléphone
-    if (telephone.value.trim().length < 8) {
-
-        document.getElementById("telephone-error").textContent =
-            "Le téléphone doit contenir au moins 8 chiffres.";
-
-        telephone.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        telephone.classList.add("success");
-    }
-
-    // verification de la participation
-    if (participation.value === "") {
-
-        document.getElementById("participation-error").textContent =
-            "Veuillez choisir un type de participation.";
-
-        participation.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        participation.classList.add("success");
-    }
-
-    // verification du pays
-    if (pays.value === "") {
-
-        document.getElementById("pays-error").textContent =
-            "Veuillez sélectionner un pays.";
-
-        pays.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        pays.classList.add("success");
-    }
-
-    // verification du pays
-    if (message.value.trim().length < 20) {
-
-        document.getElementById("message-error").textContent =
-            "Le message doit contenir au moins 20 caractères.";
-
-        message.classList.add("error-input");
-        valide = false;
-
-    } else {
-
-        message.classList.add("success");
-    }
-
-    // validation du formulaire si tout est valide
-    if (valide) {
-
-        successMessage.textContent =
-            "Votre inscription a été envoyée avec succès !";
-
-        successMessage.classList.add("success-message");
-
-        form.reset();
-
+        // Réinitialiser les classes
         document
             .querySelectorAll("input, select, textarea")
             .forEach(element => {
-                element.classList.remove("success");
+                element.classList.remove("success", "error-input");
             });
-    }
 
-});
+        successMessage.textContent = "";
+        successMessage.classList.remove("success-message");
+
+        // verification du nom
+        if (nom.value.trim() === "") {
+
+            document.getElementById("nom-error").textContent =
+                "Le nom est obligatoire.";
+
+            nom.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            nom.classList.add("success");
+        }
+
+        // verification de l'email
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!regexEmail.test(email.value.trim())) {
+
+            document.getElementById("email-error").textContent =
+                "Veuillez saisir un email valide.";
+
+            email.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            email.classList.add("success");
+        }
+
+        // verification du numéro de téléphone
+        if (telephone.value.trim().length < 8) {
+
+            document.getElementById("telephone-error").textContent =
+                "Le téléphone doit contenir au moins 8 chiffres.";
+
+            telephone.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            telephone.classList.add("success");
+        }
+
+        // verification de la participation
+        if (participation.value === "") {
+
+            document.getElementById("participation-error").textContent =
+                "Veuillez choisir un type de participation.";
+
+            participation.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            participation.classList.add("success");
+        }
+
+        // verification du pays
+        if (pays.value === "") {
+
+            document.getElementById("pays-error").textContent =
+                "Veuillez sélectionner un pays.";
+
+            pays.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            pays.classList.add("success");
+        }
+
+        // verification du pays
+        if (message.value.trim().length < 20) {
+
+            document.getElementById("message-error").textContent =
+                "Le message doit contenir au moins 20 caractères.";
+
+            message.classList.add("error-input");
+            valide = false;
+
+        } else {
+
+            message.classList.add("success");
+        }
+
+        // validation du formulaire si tout est valide
+        if (valide) {
+
+            successMessage.textContent =
+                "Votre inscription a été envoyée avec succès !";
+
+            successMessage.classList.add("success-message");
+
+            form.reset();
+
+            document
+                .querySelectorAll("input, select, textarea")
+                .forEach(element => {
+                    element.classList.remove("success");
+                });
+        }
+
+    });
 }
 
 // bouton qui apparait au scroll
 window.addEventListener('scroll', function () {
 
-  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  const backToTopButton = document.getElementById('back-to-top');
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const backToTopButton = document.getElementById('back-to-top');
 
-  if (scrollPosition > 300) { // Ajoute la classe .scrolled si on défile de plus de 300px, sinon la retire
+    if (scrollPosition > 300) { // Ajoute la classe .scrolled si on défile de plus de 300px, sinon la retire
 
-    backToTopButton.classList.add('visible');
+        backToTopButton.classList.add('visible');
 
-  } else {
+    } else {
 
-    backToTopButton.classList.remove('visible');
+        backToTopButton.classList.remove('visible');
 
-  }
+    }
 
 });
+
+// compte à rebours
+
+// Vérifie que les éléments du compte à rebours existent
+const daysElement = document.getElementById("days");
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+const messageElement = document.getElementById("sms");
+
+if (daysElement && hoursElement && minutesElement && secondsElement) {
+
+    // Date fictive de la conférence
+    const conferenceDate = new Date(
+        "March 20, 2027 09:00:00"
+    ).getTime();
+
+    const countdown = setInterval(() => {
+
+        const now = new Date().getTime();
+        const distance = conferenceDate - now;
+
+        // Si la conférence a commencé
+        if (distance <= 0) {
+
+            clearInterval(countdown);
+
+            daysElement.textContent = "00";
+            hoursElement.textContent = "00";
+            minutesElement.textContent = "00";
+            secondsElement.textContent = "00";
+
+            if (messageElement) {
+                messageElement.textContent =
+                    " La conférence a commencé !";
+            }
+
+            return;
+        }
+
+        // Calcul des jours, heures, minutes et secondes
+        const days = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+        const seconds = Math.floor(
+            (distance % (1000 * 60)) / 1000
+        );
+
+        // Affichage avec un zéro devant si nécessaire
+        daysElement.textContent =
+            String(days).padStart(2, "0");
+
+        hoursElement.textContent =
+            String(hours).padStart(2, "0");
+
+        minutesElement.textContent =
+            String(minutes).padStart(2, "0");
+
+        secondsElement.textContent =
+            String(seconds).padStart(2, "0");
+
+    }, 1000);
+}
